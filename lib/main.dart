@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue[900],
-          title: Text('Ask Me Anything'),
-        ),
-        backgroundColor: Colors.blue,
-        body: BallPage(),
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue[900],
+        title: Text('Ask Me Anything'),
       ),
-      
-    )
-  );
+      backgroundColor: Colors.blue,
+      body: BallPage(),
+    ),
+  ));
 }
 
 class BallPage extends StatelessWidget {
@@ -26,7 +23,6 @@ class BallPage extends StatelessWidget {
 }
 
 class Ball extends StatefulWidget {
-
   @override
   State<Ball> createState() => _BallState();
 }
@@ -35,7 +31,11 @@ class _BallState extends State<Ball> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset('images/ball1.png'),
+      child: TextButton(
+          onPressed: () {
+            print('I got clicked!');
+          },
+          child: Image.asset('images/ball1.png')),
     );
   }
 }
